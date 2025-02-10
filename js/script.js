@@ -68,3 +68,20 @@ function filterProducts(category) {
 		}
 	});
 }
+
+// Função para fechar todos os submenus
+function closeAllSubmenus() {
+	const submenus = document.querySelectorAll(".submenu-content");
+	submenus.forEach((submenu) => {
+		submenu.style.display = "none";
+	});
+}
+
+// Função para alternar a visibilidade do submenu
+function toggleSubmenu(event) {
+	event.preventDefault();
+	closeAllSubmenus(); // Fecha todos os submenus antes de abrir o novo
+	const submenuContent = event.target.nextElementSibling;
+	submenuContent.style.display =
+		submenuContent.style.display === "block" ? "none" : "block";
+}
